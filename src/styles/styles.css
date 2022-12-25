@@ -1,0 +1,28 @@
+/* font imports */
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+/* global variables */
+
+html,
+body {
+  margin: 0;
+  background-color: whitesmoke;
+}
+
+/* header styles */
+.header {
+  background-image: url("../assests/header-background.webp");
+  height: 20dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_title {
+  font-family: "Permanent Marker", sans-serif;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 5rem;
+  margin: 0;
+  text-decoration: underline white 15px;
+}
