@@ -2,10 +2,27 @@
 layout: "base.njk"
 ---
 
-<section class="blog-section">
-  {%include "recent-post.njk"%}
-  <section class="blog-section_main-feed">
-    {%include "blog-feed.njk"%}
-    {%include "archive-aside.njk" %}
-  </section>
+<section class="blog-section_main-feed">
+  <h3>All Posts</h3>
+  {%- for post in collections.post | reverse -%}
+    {% if post.data.title %}
+      <li class="blog_list-item">
+        <article class="list_item-article">
+          <div class="list_item-image-wrapper">
+            <img src="{{post.data.image}}" alt="{{post.data.imageAlt}}">
+          </div>
+          <section class="list_item-content">
+            <div class="content-author-div">
+              <h3>{{ post.data.title }}</h3>
+              <p>By {{ post.data.author }} on {{post.data.date | postDate }}</p>
+            </div>
+            <div class="content-description">
+              <p>{{ post.data.description }}</p>
+            </div>
+            <a class="list_item-link" href="{{ post.url }}">Continue Reading</a>
+          </section>
+        </article>
+      </li>
+    {% endif %}
+  {%- endfor %}
 </section>
